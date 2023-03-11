@@ -1,7 +1,7 @@
 header {
     display: flex;    
-    align-items: center;    
-    height: 100px;
+    align-items: center;   
+    
     box-shadow: var(--box-shadow);
 }
 
@@ -15,7 +15,8 @@ header {
 
 .header__heading {
     font-size: 40px;
-    font-weight: 700;    
+    font-weight: 700;
+    padding: 2rem 0;  
     background: linear-gradient(to right, dodgerblue  , teal 80%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -69,4 +70,8 @@ nav {
 .navigation__link:hover::after {
     transform-origin: left;
     transform: scale(1);
+}
+
+.current-rates-wrapper {
+    display: flex;
 }

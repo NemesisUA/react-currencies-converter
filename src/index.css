@@ -17,16 +17,8 @@
 body {
     font-family: 'Roboto', 'Verdana', sans-serif;
     font-size: 1.6rem;    
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
     /* color: #ddd;
     background-color: #333;  */
-}
-
-h1 {
-    font-family: 'Changa One', cursive;
 }
 
 .wrapper {
@@ -34,6 +26,18 @@ h1 {
     max-width: 1200px;
     padding: 0 20px;
     margin: 0 auto;
+}
+
+.layout {
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+h1 {
+    font-family: 'Changa One', cursive;
 }
 
 image {
@@ -60,17 +64,34 @@ p {
 }
 
 .main-section {
-    display: flex;
+    height: 70vh;   
+    display: flex;    
     flex-direction: column;    
-    text-align: left;
-    height: 70vh;
+    text-align: left;    
     padding: 40px;
-    margin: 40px 0;
+    margin: 40px 0 30px;
     border-radius: 10px;    
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);    
 }
 
 .center-horisontally {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .header-wrapper {        
+        flex-direction: column;
+        width: 100vw;       
+    }
+}
+
+@media screen and (max-width: 575px) {    
+    .wrapper {
+        padding: 0 8px;
+    }
+    .main-section {        
+        padding: 10px;
+        overflow: hidden;  
+    }
 }

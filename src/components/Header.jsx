@@ -25,7 +25,7 @@ const Header = () => {
             </button>
           </nav>
         </div>
-        <div className="header-wrapper">
+        <div className="current-rates-wrapper">
           <div className="header__current-rates">USD = 38 UAH</div>
           <div className="header__current-rates">EUR = 38 UAH</div>
         </div>

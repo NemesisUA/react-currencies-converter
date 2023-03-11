@@ -2,9 +2,13 @@ import React from 'react'
 
 export const HomePage = () => {
   return (
-    <section className='main-section'>
-      HomePage
-    </section>
+    <main>
+      <div className="wrapper">
+        <section className="main-section">
+          <h2>Homepage</h2>
+        </section>
+      </div>
+    </main>
   )
 }
 

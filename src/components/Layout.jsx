@@ -4,15 +4,13 @@ import Footer from './Footer'
 
 const Layout = () => {
   return (
-    <>
+    <div className="layout">
         <Header />
-        <main>
-          <div className="wrapper">
-            <Outlet></Outlet>
-          </div>
-        </main>
+
+        <Outlet></Outlet>
+        
         <Footer />
-    </>
+    </div>
   )
 }
 
