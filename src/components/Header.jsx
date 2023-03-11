@@ -1,15 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/Header.css'
+import Button from './UI/Button'
 
 const Header = () => {
   return (
     <header className="header">
       <div className="wrapper">
         <div className="header-wrapper">
-          <Link to='/'>
+          <div className='logo-wrapper'>
+            <Link to='/'>
+              <div className="logo"></div>
+            </Link>
             <h1 className="header__heading">CURRENCY CONVERTER</h1>
-          </Link>
+          </div>
           <nav className="header__navigation">
             <ul className="navigation">
               <li className="navigation__item">
@@ -19,10 +23,9 @@ const Header = () => {
                 <Link to='about' className="navigation__link">About</Link>
               </li>
             </ul>
-            <button className="styled-btn">
-              toggle
-              <i className="fa-solid fa-moon" ></i>
-            </button>
+            <Button className="styled-btn">
+              toggle <i className="fa-solid fa-moon" ></i>
+            </Button>
           </nav>
         </div>
         <div className="current-rates-wrapper">

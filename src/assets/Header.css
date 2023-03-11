@@ -13,6 +13,18 @@ header {
     margin-bottom: 10px; 
 }
 
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {    
+    width: 40px;
+    height: 40px;
+    background: url(../assets/icons/logo.svg);
+    margin-right: 6px;
+}
+
 .header__heading {
     font-size: 40px;
     font-weight: 700;
@@ -20,15 +32,13 @@ header {
     background: linear-gradient(to right, dodgerblue  , teal 80%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;      
-}
-
-.header__navigation {    
-    padding: 0 40px;    
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;     
 }
 
 nav {
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -38,7 +48,7 @@ nav {
 }
 
 .navigation__item {
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     font-size: 2rem;     
 }
 
@@ -46,7 +56,7 @@ nav {
     position: relative;
     color: dodgerblue;
     text-decoration: none;
-    padding: 1rem;   
+    padding: 0.5rem;   
 }
 
 .navigation__link:hover {
@@ -74,4 +84,14 @@ nav {
 
 .current-rates-wrapper {
     display: flex;
+}
+
+@media screen and (max-width: 767px) {
+    .header__heading {
+        font-size: 40px;
+        white-space: nowrap;     
+    }
+    nav {
+        margin-left: 0;
+    }
 }
