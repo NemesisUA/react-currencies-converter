@@ -5,8 +5,8 @@ import '../assets/Footer.css'
 const Footer = () => {
   return (
     <footer>
-        <div class="wrapper">
-            <h4>Test Task &copy; Mezit Tetyana  
+        <div className="wrapper footer-wrapper">
+            <h4 >Test Task &copy; Mezit Tetyana  
               <a className="github-link"
                 href="https://github.com/NemesisUA" target="_blank" 
                 rel="noopener noreferrer">

@@ -19,13 +19,11 @@ const Header = () => {
                 <Link to='about' className="navigation__link">About</Link>
               </li>
             </ul>
-          </nav>
-          <div className="toggle-wrapper">
             <button className="styled-btn">
               toggle
               <i className="fa-solid fa-moon" ></i>
             </button>
-          </div>
+          </nav>
         </div>
         <div className="header-wrapper">
           <div className="header__current-rates">USD = 38 UAH</div>
