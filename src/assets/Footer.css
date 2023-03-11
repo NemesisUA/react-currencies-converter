@@ -1,0 +1,14 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    box-shadow: 0 -3px 10px lightgray;
+}
+
+.github-link {
+    margin-left: 20px;
+}
