@@ -28,8 +28,11 @@ const Header = () => {
             </ul>
 
             <Button onClick={toggleTheme}
-             className="styled-btn">
-              {theme} <i className="fa-solid fa-moon" ></i>
+              className="styled-btn">
+              toggle {
+                theme === 'light' ? <i className="fa-solid fa-moon" ></i>
+                 : <i className="fa-solid fa-sun" ></i>
+               } 
             </Button>
 
           </nav>
