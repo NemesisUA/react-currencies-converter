@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTheme } from '../hooks/useTheme'
 import '../assets/Header.css'
 import Button from './UI/Button'
 
 const Header = () => {
+  const {theme, toggleTheme} = useTheme();
+ 
   return (
     <header className="header">
       <div className="wrapper">
@@ -23,9 +26,12 @@ const Header = () => {
                 <Link to='about' className="navigation__link">About</Link>
               </li>
             </ul>
-            <Button className="styled-btn">
-              toggle <i className="fa-solid fa-moon" ></i>
+
+            <Button onClick={toggleTheme}
+             className="styled-btn">
+              {theme} <i className="fa-solid fa-moon" ></i>
             </Button>
+
           </nav>
         </div>
         <div className="current-rates-wrapper">
