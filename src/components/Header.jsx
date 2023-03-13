@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import { useTheme } from '../hooks/useTheme'
 import '../assets/Header.css'
 import Button from './UI/Button'
+import HeaderRate from './UI/HeaderRate'
+import { format } from '../utils/formatters'
 
 const Header = () => {
   const {theme, toggleTheme} = useTheme();
- 
+   
   return (
     <header className="header">
       <div className="wrapper">
@@ -38,8 +40,8 @@ const Header = () => {
           </nav>
         </div>
         <div className="current-rates-wrapper">
-          <div className="header__current-rates">USD = 38 UAH</div>
-          <div className="header__current-rates">EUR = 38 UAH</div>
+          <HeaderRate currency='USD'></HeaderRate>
+          <HeaderRate currency='EUR'></HeaderRate>
         </div>
       </div>
     </header>
