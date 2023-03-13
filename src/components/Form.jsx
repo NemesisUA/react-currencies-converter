@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { RatesContext } from '../hoc/RatesProvider.jsx';
 import { format } from '../utils/formatters.js'
 import InputGroup from './InputGroup.jsx';
 import Button from './UI/Button.jsx';
 
 const Form = () => {
+  const {rates, loading, error} = useContext(RatesContext);
+
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
 
   const [currency1, setCurrency1] = useState('USD');
   const [currency2, setCurrency2] = useState('UAH');
-
-  const [rates, setRates] = useState({});
-
-  useEffect(() => {
-    fetch('https://v6.exchangerate-api.com/v6/1d7578694ef7606402b7f942/latest/USD')
-    .then(response => response.json())
-    .then(data => setRates(data.conversion_rates))
-  }, [])
 
   useEffect(() => {
     if (!!rates) {
@@ -47,6 +42,13 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   }
+
+  if (loading) return (
+    <h2>wait please. loading...</h2>
+  );
+  if (error) return (
+    <pre>{JSON.stringify(error.message, null, 2)}</pre>
+  )
 
   return (
     <form onSubmit={handleSubmit} className="convert">
