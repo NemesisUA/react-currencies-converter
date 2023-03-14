@@ -14,4 +14,9 @@ footer {
 .github-link {
     margin-left: 20px;
     color: dodgerblue;
+    transition: all 0.3s ease-in;
+}
+
+.github-link:hover {    
+    color: teal;
 }

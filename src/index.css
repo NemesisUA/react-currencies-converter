@@ -131,4 +131,12 @@ p {
         padding: 10px;
         overflow: hidden;  
     }
+
+    form {
+        max-width: 100%;
+    }
+
+    form .convert__input {
+        width: 100px;
+    }
 }

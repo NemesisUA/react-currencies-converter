@@ -4,6 +4,7 @@ import { format } from '../utils/formatters.js'
 import InputGroup from './InputGroup.jsx';
 import Button from './UI/Button.jsx';
 import  { getCountryCode } from '../utils/getCountryCode.js';
+import '../assets/Form.css'
 
 const Form = () => {
   const {rates, loading, error} = useContext(RatesContext);
@@ -78,6 +79,7 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className="convert">
+      <h2>Choose Curensies to Convert:</h2>
       <InputGroup
         onAmountChange={handleAmount1Change}
         onCurrencyChange={handleCurrency1Change}
@@ -85,6 +87,8 @@ const Form = () => {
         amount={amount1} 
         currency={currency1}
         countryCode={countryCode1} />
+
+      <i className="fa fa-exchange fa-lg" ></i>
 
       <InputGroup
         onAmountChange={handleAmount2Change}

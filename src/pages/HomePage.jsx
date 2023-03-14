@@ -5,8 +5,7 @@ export const HomePage = () => {
   return (
     <main>
       <div className="wrapper">
-        <section className="main-section">
-          <h2>Curensies to convert</h2>
+        <section className="main-section">          
           <Form />
         </section>
       </div>

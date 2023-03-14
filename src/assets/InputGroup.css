@@ -1,5 +1,65 @@
-.convert__group {
-  width: 300px;
-  
-  margin: 10px;
+.convert__group { 
+  display: grid;
+  grid-template-columns: 50px 1fr 70px; 
+  min-width: 100px;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;  
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.light .convert__group {
+  background-color: rgba(30, 144, 255, 0.3);
+  /* 30 144 255 */
+}
+
+.light .convert__input,
+.light .convert__select {
+  color: #333;
+}
+
+.dark .convert__group {  
+  background-color: teal;
+}
+
+.convert__input,
+.convert__select {
+  background: none;
+  color: #ddd;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-family: 'Roboto', Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.convert__input {
+  font-size: 2.2rem;
+  padding-left: 10px;
+}
+
+.convert__select {
+  font-size: 1.8rem;
+  padding-right: 4px;  
+}
+
+option {
+  color: #333;
+}
+
+form button {
+  margin-top: 30px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
 }
