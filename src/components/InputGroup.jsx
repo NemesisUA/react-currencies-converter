@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { PropTypes } from 'prop-types'
+import '../assets/InputGroup.css'
 
 const InputGroup = ( props ) => {
-  const { amount, currency, currencies, 
+  const { amount, currency, 
+    currencies, countryCode,
     onAmountChange, onCurrencyChange } = props;
 
+  
   return (
     <div className="convert__group">
+        <span 
+          className={`fi fi-${countryCode}`}>
+        </span>
 
         <input 
           value={amount || 1} 

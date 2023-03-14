@@ -3,6 +3,7 @@ import { RatesContext } from '../hoc/RatesProvider.jsx';
 import { format } from '../utils/formatters.js'
 import InputGroup from './InputGroup.jsx';
 import Button from './UI/Button.jsx';
+import  { getCountryCode } from '../utils/getCountryCode.js';
 
 const Form = () => {
   const {rates, loading, error} = useContext(RatesContext);
@@ -12,6 +13,23 @@ const Form = () => {
 
   const [currency1, setCurrency1] = useState('USD');
   const [currency2, setCurrency2] = useState('UAH');
+
+  const [countries, setCountries] = useState([]);
+  const [countryCode1, setCountryCode1] = useState('us');
+  const [countryCode2, setCountryCode2] = useState('ua');
+
+  let arr = [];
+
+  const getCountries = () => {
+    fetch('./countries.json')
+      .then(response => response.json())
+      .then(data => setCountries(data.countries.country))
+      .catch(error => console.error(error.message))
+  }
+
+  useEffect(() => {
+    getCountries()
+  }, [])
 
   useEffect(() => {
     if (!!rates) {
@@ -39,6 +57,14 @@ const Form = () => {
     setCurrency2(currency2);
   }
 
+  useEffect(() => {    
+    setCountryCode1(getCountryCode(countries, currency1));    
+  }, [currency1]);
+
+  useEffect(() => {    
+    setCountryCode2(getCountryCode(countries, currency2));    
+  }, [currency2]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   }
@@ -57,14 +83,16 @@ const Form = () => {
         onCurrencyChange={handleCurrency1Change}
         currencies={Object.keys(rates)} 
         amount={amount1} 
-        currency={currency1} />
+        currency={currency1}
+        countryCode={countryCode1} />
 
       <InputGroup
         onAmountChange={handleAmount2Change}
         onCurrencyChange={handleCurrency2Change}
         currencies={Object.keys(rates)} 
         amount={amount2} 
-        currency={currency2} />
+        currency={currency2} 
+        countryCode={countryCode2} />
 
       <Button type="submit">Convert</Button>
     </form>
