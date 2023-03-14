@@ -1,9 +1,10 @@
 import React, { useContext} from 'react'
 import { RatesContext } from '../../hoc/RatesProvider'
 import { format } from '../../utils/formatters'
+import '../../assets/HeaderRates.css'
 
-const HeaderRate = ({ currency }) => {
-  const {rates, loading, error} = useContext(RatesContext);
+const HeaderRate = ({ currency, countryCode }) => {
+  const {rates, loading, error} = useContext(RatesContext);  
 
   if (loading) return (
     <span>loading...</span>
@@ -13,9 +14,15 @@ const HeaderRate = ({ currency }) => {
   )
 
   return (
-    <div style={{padding: '5px'}}
-      className="header__current-rates">
-      {`${currency} = ${format(rates['UAH'] / rates[currency])} UAH`}
+    <div className='header__current-rates'>
+      <span className={`fi fi-${countryCode}`}></span>
+      <p>
+        {`1 ${currency} = `}
+        <span className='value'>
+          {format(rates['UAH'] / rates[currency] || '')}
+        </span>
+        {` UAH`}
+      </p>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const InputGroup = ( props ) => {
           value={amount || 1} 
           onChange={e => onAmountChange(+e.target.value)} 
           className="convert__input" 
-          type="number" min={1} />
+          type="number" />
           
         <select 
           value={currency || 'usd'}

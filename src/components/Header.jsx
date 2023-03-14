@@ -4,7 +4,6 @@ import { useTheme } from '../hooks/useTheme'
 import '../assets/Header.css'
 import Button from './UI/Button'
 import HeaderRate from './UI/HeaderRate'
-import { format } from '../utils/formatters'
 
 const Header = () => {
   const {theme, toggleTheme} = useTheme();
@@ -40,8 +39,8 @@ const Header = () => {
           </nav>
         </div>
         <div className="current-rates-wrapper">
-          <HeaderRate currency='USD'></HeaderRate>
-          <HeaderRate currency='EUR'></HeaderRate>
+          <HeaderRate currency='USD' countryCode='us'></HeaderRate>
+          <HeaderRate currency='EUR' countryCode='eu'></HeaderRate>          
         </div>
       </div>
     </header>
