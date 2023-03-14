@@ -1,5 +1,8 @@
 ## тестове завдання
 
+**деплой:** 
+https://nemesisua.github.io/react-currencies-converter/
+
 # Конвертер валют
 
 Описание
